@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nabil Chemseddine — Mathematician</title>
+  <meta name="description" content="Academic profile of Nabil Chemseddine, PhD in Nonlinear Analysis. Specializing in nonlinear elliptic PDEs, anisotropic Sobolev spaces, and variational methods." />
+  <meta name="keywords" content="Nabil Chemseddine, mathematician, nonlinear PDEs, Sobolev spaces, variational methods, elliptic equations" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===========================
+       CSS CUSTOM PROPERTIES
+    =========================== */
+    :root {
+      --navy: #0B1F3A;
+      --navy-light: #112848;
+      --navy-card: #0E2240;
+      --navy-card-hover: #132a50;
+      --offwhite: #F5F0E8;
+      --offwhite-muted: #C8C0B0;
+      --gold: #C9A84C;
+      --gold-light: #dfc06a;
+      --gold-dim: rgba(201, 168, 76, 0.15);
+      --gold-border: rgba(201, 168, 76, 0.4);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+      --max-width: 1200px;
+      --radius: 6px;
+    }
+
+    /* ===========================
+       RESET & BASE
+    =========================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--navy);
+      color: var(--offwhite);
+      font-family: var(--sans);
+      font-weight: 400;
+      line-height: 1.7;
+      min-height: 100vh;
+      overflow-x: hidden;
+      /* Paper noise texture via SVG data URI */
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+    }
+
+    /* ===========================
+       ANIMATIONS
+    =========================== */
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @keyframes pulseGold {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0); }
+      50%       { box-shadow: 0 0 12px 3px rgba(201, 168, 76, 0.18); }
+    }
+
+    .anim-section {
+      opacity: 0;
+      animation: fadeSlideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .anim-section:nth-child(1) { animation-delay: 0.05s; }
+    .anim-section:nth-child(2) { animation-delay: 0.18s; }
+    .anim-section:nth-child(3) { animation-delay: 0.31s; }
+    .anim-section:nth-child(4) { animation-delay: 0.44s; }
+    .anim-section:nth-child(5) { animation-delay: 0.57s; }
+    .anim-section:nth-child(6) { animation-delay: 0.70s; }
+
+    /* ===========================
+       LAYOUT
+    =========================== */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ===========================
+       THIN GOLD RULE
+    =========================== */
+    .section-rule {
+      display: block;
+      width: 48px;
+      height: 2px;
+      background: linear-gradient(to right, var(--gold), transparent);
+      margin-top: 8px;
+      margin-bottom: 36px;
+      border: none;
+    }
+
+    /* ===========================
+       SECTION HEADING
+    =========================== */
+    .section-heading {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3vw, 2rem);
+      font-weight: 600;
+      color: var(--offwhite);
+      letter-spacing: 0.01em;
+      margin-bottom: 0;
+    }
+
+    /* ===========================
+       HEADER / HERO
+    =========================== */
+    header {
+      padding: 80px 0 64px;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.18);
+      position: relative;
+      background-image: linear-gradient(to right, rgba(11,31,58,0.75) 30%, rgba(11,31,58,0.35) 100%), url('background.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .hero-wrapper {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .hero-image-container {
+      flex-shrink: 0;
+      margin-top: 10px;
+    }
+
+    .hero-image {
+      width: 215px;
+      height: 215px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--gold);
+      padding: 8px;
+      background: rgba(201, 168, 76, 0.05);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(201, 168, 76, 0.15);
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+    }
+
+    .hero-image:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(201, 168, 76, 0.3);
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      opacity: 0.6;
+    }
+
+    .hero-name {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 6vw, 4.2rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--offwhite);
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .hero-name span {
+      color: var(--gold);
+    }
+
+    .hero-subtitle {
+      font-family: var(--serif);
+      font-size: clamp(1rem, 2.2vw, 1.25rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--offwhite-muted);
+      margin-bottom: 14px;
+    }
+
+    .hero-desc {
+      font-size: 0.95rem;
+      color: var(--offwhite-muted);
+      max-width: 600px;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    /* Nav links */
+    .hero-nav {
+      display: flex;
+      gap: 0;
+      margin-bottom: 40px;
+    }
+
+    .hero-nav a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--offwhite-muted);
+      text-decoration: none;
+      padding: 6px 0;
+      margin-right: 28px;
+      position: relative;
+      transition: color 0.25s;
+    }
+
+    .hero-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 1px;
+      background: var(--gold);
+      transition: width 0.3s ease;
+    }
+
+    .hero-nav a:hover,
+    .hero-nav a.active {
+      color: var(--gold);
+    }
+
+    .hero-nav a:hover::after,
+    .hero-nav a.active::after {
+      width: 100%;
+    }
+
+    /* ===========================
+       STICKY NAV
+    =========================== */
+    #sticky-nav {
+      position: fixed;
+      top: -100px;
+      left: 0; right: 0;
+      background: rgba(11, 31, 58, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 1000;
+      transition: top 0.3s ease;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+      padding: 14px 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    #sticky-nav.visible {
+      top: 0;
+    }
+
+    .sticky-nav-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .sticky-nav-brand {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--offwhite);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .sticky-nav-brand span {
+      color: var(--gold);
+    }
+
+    .sticky-nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .sticky-nav-links a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--offwhite-muted);
+      text-decoration: none;
+      position: relative;
+      transition: color 0.25s;
+      padding: 4px 0;
+    }
+
+    .sticky-nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 1px;
+      background: var(--gold);
+      transition: width 0.3s ease;
+    }
+
+    .sticky-nav-links a:hover,
+    .sticky-nav-links a.active {
+      color: var(--gold);
+    }
+
+    .sticky-nav-links a:hover::after,
+    .sticky-nav-links a.active::after {
+      width: 100%;
+    }
+
+    @media (max-width: 800px) {
+      .sticky-nav-links {
+        display: none;
+      }
+    }
+
+    /* Stats bar */
+    .stats-bar {
+      display: flex;
+      gap: 0;
+      flex-wrap: wrap;
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      width: fit-content;
+      background: rgba(201, 168, 76, 0.04);
+    }
+
+    .stat-item {
+      padding: 10px 14px;
+      border-right: 1px solid var(--gold-border);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-value {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.73rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--offwhite-muted);
+    }
+
+    .stat-item a {
+      color: inherit;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .stat-item a:hover .stat-value {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ===========================
+       MAIN CONTENT
+    =========================== */
+    main {
+      padding-top: 72px;
+    }
+
+    section {
+      margin-bottom: 80px;
+    }
+
+    /* ===========================
+       RESEARCH INTERESTS — CARDS
+    =========================== */
+    .interests-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .interest-card {
+      background: var(--navy-card);
+      border: 1px solid rgba(255,255,255,0.045);
+      border-left: 3px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 22px 22px 22px 20px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+
+    .interest-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(201, 168, 76, 0.25);
+      background: var(--navy-card-hover);
+    }
+
+    .interest-symbol {
+      font-size: 1.8rem;
+      color: var(--gold);
+      opacity: 0.7;
+      margin-bottom: 10px;
+      font-family: var(--serif);
+      line-height: 1;
+    }
+
+    .interest-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--offwhite);
+      margin-bottom: 6px;
+    }
+
+    .interest-desc {
+      font-size: 0.855rem;
+      color: var(--offwhite-muted);
+      line-height: 1.6;
+    }
+
+    /* ===========================
+       PUBLICATIONS
+    =========================== */
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .filter-btn {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--offwhite-muted);
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 5px 16px;
+      cursor: pointer;
+      transition: all 0.22s ease;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--gold-border);
+      color: var(--gold);
+    }
+
+    .filter-btn.active {
+      background: var(--gold-dim);
+      border-color: var(--gold-border);
+      color: var(--gold);
+    }
+
+    .pub-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .pub-card {
+      background: var(--navy-card);
+      border: 1px solid rgba(255,255,255,0.045);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.25s ease;
+    }
+
+    .pub-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25), 0 0 0 1px rgba(201, 168, 76, 0.2);
+    }
+
+    .pub-card.hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(6px);
+      position: absolute;
+      visibility: hidden;
+    }
+
+    .pub-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .pub-title {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1.35;
+      margin-bottom: 6px;
+      text-decoration: none;
+      transition: color 0.2s, text-shadow 0.2s;
+    }
+
+    .pub-title:hover {
+      color: var(--gold-light);
+      text-shadow: 0 0 18px rgba(201, 168, 76, 0.4);
+    }
+
+    .pub-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 5px;
+    }
+
+    .pub-journal {
+      font-size: 0.8rem;
+      font-weight: 500;
+      font-variant: small-caps;
+      letter-spacing: 0.04em;
+      color: var(--offwhite-muted);
+    }
+
+    .pub-year-badge {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--navy);
+      background: var(--gold);
+      border-radius: 3px;
+      padding: 1px 7px;
+      letter-spacing: 0.04em;
+    }
+
+    .pub-authors {
+      font-size: 0.805rem;
+      color: rgba(200, 192, 176, 0.7);
+    }
+
+    .pub-action {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .btn-view {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--gold);
+      text-decoration: none;
+      border: 1px solid var(--gold-border);
+      border-radius: 4px;
+      padding: 7px 14px;
+      white-space: nowrap;
+      transition: background 0.22s, color 0.22s, box-shadow 0.22s;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .btn-view:hover {
+      background: var(--gold-dim);
+      box-shadow: 0 0 14px rgba(201, 168, 76, 0.2);
+    }
+
+    .btn-view.disabled {
+      pointer-events: none;
+      opacity: 0.35;
+    }
+
+    /* ===========================
+       TEACHING TIMELINE
+    =========================== */
+    .timeline {
+      position: relative;
+      border-left: 2px solid var(--gold-border);
+      padding-left: 32px;
+      margin-left: 8px;
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 28px;
+      background: var(--navy-card);
+      border: 1px solid rgba(255,255,255,0.045);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      transition: box-shadow 0.25s ease, transform 0.25s ease;
+    }
+
+    .timeline-item:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25), 0 0 0 1px rgba(201, 168, 76, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -40px;
+      top: 26px;
+      width: 14px;
+      height: 14px;
+      background: var(--navy-card);
+      border: 3px solid var(--gold);
+      border-radius: 50%;
+      box-shadow: 0 0 0 6px var(--navy);
+      z-index: 1;
+      box-sizing: border-box;
+    }
+
+    .timeline-date {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .timeline-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--offwhite);
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+
+    .timeline-desc {
+      font-size: 0.85rem;
+      color: var(--offwhite-muted);
+      line-height: 1.6;
+    }
+
+    .timeline-desc ul {
+      list-style-type: none;
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    
+    .timeline-desc ul li {
+      position: relative;
+      padding-left: 12px;
+    }
+    
+    .timeline-desc ul li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    /* ===========================
+       REFEREEING JOURNALS
+    =========================== */
+    .journal-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .journal-tag {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--offwhite-muted);
+      border: 1px solid var(--gold-border);
+      border-radius: 20px;
+      padding: 5px 14px;
+      background: transparent;
+      transition: background 0.22s, color 0.22s, box-shadow 0.22s;
+    }
+
+    .journal-tag:hover {
+      background: var(--gold-dim);
+      color: var(--gold-light);
+      box-shadow: 0 0 12px rgba(201, 168, 76, 0.15);
+    }
+
+    /* ===========================
+       FOOTER
+    =========================== */
+    footer {
+      border-top: 1px solid rgba(201, 168, 76, 0.18);
+      padding: 40px 0 48px;
+      text-align: center;
+    }
+
+    .footer-copy {
+      font-size: 0.82rem;
+      color: var(--offwhite-muted);
+      margin-bottom: 16px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--offwhite-muted);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    /* ===========================
+       BACK TO TOP BUTTON
+    =========================== */
+    #back-to-top {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 18px rgba(201, 168, 76, 0.35);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(12px);
+      transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
+      z-index: 999;
+    }
+
+    #back-to-top.visible {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0);
+    }
+
+    #back-to-top:hover {
+      box-shadow: 0 6px 24px rgba(201, 168, 76, 0.5);
+      animation: pulseGold 1.5s ease infinite;
+    }
+
+    /* ===========================
+       DIVIDER
+    =========================== */
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(201, 168, 76, 0.18), transparent);
+      margin: 0 0 80px;
+    }
+
+    /* ===========================
+       RESPONSIVE
+    =========================== */
+    @media (max-width: 768px) {
+      header {
+        background-attachment: scroll;
+      }
+    }
+
+    @media (max-width: 640px) {
+      header {
+        padding: 56px 0 48px;
+      }
+
+      .hero-wrapper {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 32px;
+      }
+
+      .hero-image {
+        width: 180px;
+        height: 180px;
+      }
+
+      .interests-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pub-card {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .pub-action {
+        width: 100%;
+      }
+
+      .btn-view {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .stats-bar {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .stat-item {
+        border-right: none;
+        border-bottom: 1px solid var(--gold-border);
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .stat-item:last-child {
+        border-bottom: none;
+      }
+
+      #back-to-top {
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 18px;
+      }
+
+      .hero-nav {
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .hero-nav a {
+        margin-right: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== STICKY NAV ========== -->
+  <div id="sticky-nav">
+    <div class="sticky-nav-container">
+      <a href="#home" class="sticky-nav-brand">Nabil <span>Chemseddine</span></a>
+      <nav class="sticky-nav-links" aria-label="Sticky navigation">
+        <a href="#home">Home</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#refereeing">Refereeing</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ========== HEADER ========== -->
+  <header id="home">
+    <div class="container anim-section">
+      <div class="hero-wrapper">
+        <div class="hero-text">
+          <p class="hero-subtitle">Mathematician &nbsp;·&nbsp; PhD in Nonlinear Analysis</p>
+          <h1 class="hero-name">Nabil <span>Chemseddine</span></h1>
+          <p class="hero-desc">
+            Specializing in nonlinear elliptic PDEs, anisotropic Sobolev spaces, and variational methods.
+          </p>
+
+          <nav class="hero-nav" aria-label="Primary navigation">
+            <a href="#home">Home</a>
+            <a href="#research">Research</a>
+            <a href="#publications">Publications</a>
+            <a href="#teaching">Teaching</a>
+            <a href="#refereeing">Refereeing</a>
+          </nav>
+
+          <div class="stats-bar" role="list">
+            <div class="stat-item" role="listitem">
+              <span class="stat-value"><span class="counter" data-target="15">0</span>+</span>
+              <span class="stat-label">Publications</span>
+            </div>
+            <div class="stat-item" role="listitem">
+              <span class="stat-value"><span class="counter" data-target="10">0</span>+</span>
+              <span class="stat-label">Journals Reviewed</span>
+            </div>
+            <div class="stat-item" role="listitem">
+              <a href="https://scholar.google.com/citations?user=wW8nHf4AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile">
+                <span class="stat-value">Scholar ↗</span>
+                <span class="stat-label">Google Scholar</span>
+              </a>
+            </div>
+            <div class="stat-item" role="listitem">
+              <a href="https://www.researchgate.net/profile/Nabil-Chems-Eddine" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate profile">
+                <span class="stat-value">ResearchGate ↗</span>
+                <span class="stat-label">Academic Profile</span>
+              </a>
+            </div>
+            <div class="stat-item" role="listitem">
+              <a href="https://www.scopus.com/authid/detail.uri?authorId=57215579525" target="_blank" rel="noopener noreferrer" aria-label="Scopus profile">
+                <span class="stat-value">Scopus ↗</span>
+                <span class="stat-label">Author ID</span>
+              </a>
+            </div>
+            <div class="stat-item" role="listitem">
+              <a href="https://orcid.org/0000-0001-8503-1305" target="_blank" rel="noopener noreferrer" aria-label="ORCID profile">
+                <span class="stat-value">ORCID ↗</span>
+                <span class="stat-label">Profile</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image-container">
+          <img src="profile.png" alt="Nabil Chemseddine" class="hero-image" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== MAIN ========== -->
+  <main>
+    <div class="container">
+
+      <!-- RESEARCH INTERESTS -->
+      <section id="research" class="anim-section">
+        <h2 class="section-heading">Research Interests</h2>
+        <span class="section-rule" aria-hidden="true"></span>
+
+        <div class="interests-grid">
+          <div class="interest-card">
+            <div class="interest-symbol" aria-hidden="true">∂</div>
+            <div class="interest-title">Nonlinear Elliptic PDEs</div>
+            <p class="interest-desc">
+              Study of existence, regularity, and qualitative properties of solutions to nonlinear elliptic equations.
+            </p>
+          </div>
+          <div class="interest-card">
+            <div class="interest-symbol" aria-hidden="true">Δ</div>
+            <div class="interest-title">Boundary Value Problems</div>
+            <p class="interest-desc">
+              Analysis of fully nonlinear elliptic PDEs with Dirichlet and Neumann boundary conditions.
+            </p>
+          </div>
+          <div class="interest-card">
+            <div class="interest-symbol" aria-hidden="true">∇</div>
+            <div class="interest-title">Variational &amp; Topological Methods</div>
+            <p class="interest-desc">
+              Application of mountain pass theorems, Nehari manifolds, and genus theory to PDE problems.
+            </p>
+          </div>
+          <div class="interest-card">
+            <div class="interest-symbol" aria-hidden="true">∫</div>
+            <div class="interest-title">Critical Points Theory</div>
+            <p class="interest-desc">
+              Min-max methods and Morse theory for energy functionals in Sobolev spaces.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider" aria-hidden="true"></div>
+
+      <!-- PUBLICATIONS -->
+      <section id="publications" class="anim-section">
+        <h2 class="section-heading">Publications &amp; Preprints</h2>
+        <span class="section-rule" aria-hidden="true"></span>
+
+        <!-- Filter buttons -->
+        <div class="filter-row" role="group" aria-label="Filter publications by year">
+          <button class="filter-btn active" data-year="all" id="filter-all">All</button>
+          <button class="filter-btn" data-year="2025" id="filter-2025">2025</button>
+          <button class="filter-btn" data-year="2024" id="filter-2024">2024</button>
+          <button class="filter-btn" data-year="2023" id="filter-2023">2023</button>
+          <button class="filter-btn" data-year="2022" id="filter-2022">2022</button>
+          <button class="filter-btn" data-year="2021" id="filter-2021">2021</button>
+          <button class="filter-btn" data-year="2020" id="filter-2020">2020</button>
+        </div>
+
+        <div class="pub-list" id="pub-list">
+
+          <!-- 2024 -->
+          <div class="pub-card" data-year="2024">
+            <div class="pub-body">
+              <a class="pub-title" href="https://link.springer.com/article/10.1007/s12220-025-02166-2" target="_blank" rel="noopener noreferrer">
+                The compact embeddings and the concentration-compactness principles for anisotropic variable exponent Sobolev spaces and applications
+              </a>
+              <div class="pub-meta">
+                <span class="pub-journal">The Journal of Geometric Analysis</span>
+                <span class="pub-year-badge">2024</span>
+              </div>
+              <p class="pub-authors">with Maria Alessandra Ragusa</p>
+            </div>
+            <div class="pub-action">
+              <a class="btn-view" href="https://link.springer.com/article/10.1007/s12220-025-02166-2" target="_blank" rel="noopener noreferrer">→ View Paper</a>
+            </div>
+          </div>
+
+          <!-- 2025 -->
+          <div class="pub-card" data-year="2025">
+            <div class="pub-body">
+              <a class="pub-title" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/mma.11157" target="_blank" rel="noopener noreferrer">
+                On a Class of Anisotropic Elliptic Systems of Schrödinger–Kirchhoff Type in Unbounded Domains
+              </a>
+              <div class="pub-meta">
+                <span class="pub-journal">Mathematical Methods in the Applied Sciences</span>
+                <span class="pub-year-badge">2025</span>
+              </div>
+              <p class="pub-authors">with Anass Ouannasser, Jinxia Cen</p>
+            </div>
+            <div class="pub-action">
+              <a class="btn-view" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/mma.11157" target="_blank" rel="noopener noreferrer">→ View Paper</a>
+            </div>
+          </div>
+
+          <!-- 2025 -->
+          <div class="pub-card" data-year="2025">
+            <div class="pub-body">
+              <a class="pub-title" href="https://journals.vilniustech.lt/index.php/MMA/article/view/19006" target="_blank" rel="noopener noreferrer">
+                On a new class of anisotropic double phase equations
+              </a>
+              <div class="pub-meta">
+                <span class="pub-journal">Journal of Nonlinear and Variational Analysis</span>
+                <span class="pub-year-badge">2025</span>
+              </div>
+              <p class="pub-authors">with Anass Ouannasser, Maria Alessandra Ragusa</p>
+            </div>
+            <div class="pub-action">
+              <a class="btn-view" href="https://journals.vilniustech.lt/index.php/MMA/article/view/19006" target="_blank" rel="noopener noreferrer">→ View Paper</a>
+            </div>
+          </div>
+
+          <!-- 2025 -->
+          <div class="pub-card" data-year="2025">
+            <div class="pub-body">
+              <a class="pub-title" href="https://doi.org/10.1080/17476933.2025.2454681" target="_blank" rel="noopener noreferrer">
+                Nonlocal Dirichlet problems for anisotropic Schrödinger-type potential systems
+              </a>
+              <div class="pub-meta">
+                <span class="pub-journal">Complex Variables and Elliptic Equations</span>
+                <span class="pub-year-badge">2025</span>
+              </div>
+              <p class="pub-authors">with Oussama Sebbar, Zine El Abidine Guennoun</p>
+            </div>
+            <div class="pub-action">
+              <a class="btn-view" href="https://doi.org/10.1080/17476933.2025.2454681" target="_blank" rel="noopener noreferrer">→ View Paper</a>
+            </div>
+          </div>
+
+          <!-- 2024 -->
+          <div class="pub-card" data-year="2024">
+            <div class="pub-body">
+              <a class="pub-title" href="https://www.degruyterbrill.com/document/doi/10.1515/dema-2024-0079/html" target="_blank" rel="noopener noreferrer">
+                Embeddings of anisotropic Sobolev spaces into spaces of anisotropic Hölder-continuous functions
+              </a>
+              <div class="pub-meta">
+                <span class="pub-journal">Demonstratio Mathematica</span>
+                <span class="pub-year-badge">2024</span>
+              </div>
+              <p class="pub-authors">with Dušan D. Repovš</p>
+            </div>
+            <div class="pub-action">
+              <a class="btn-view" href="https://www.degruyterbrill.com/document/doi/10.1515/dema-2024-0079/html" target="_blank" rel="noopener noreferrer">→ View Paper</a>
+            </div>
+          </div>
+
+          <!-- 2024 -->
+          <div class="pub-card" data-year="2024">
+            <div class="pub-body">
+              <a class="pub-title" href="https://journals.vilniustech.lt/index.php/MMA/article/view/19006" target="_blank" rel="noopener noreferrer">
+                The Dirichlet Problem for a Class of Anisotropic Schrödinger-Kirchhoff-Type Equations with Critical Exponent
+              </a>
+              <div class="pub-meta">
+                <span class="pub-journal">Mathematical Modelling and Analysis</span>
+                <span class="pub-year-badge">2024</span>
+              </div>
+              <p class="pub-authors">with Anh Tuan Nguyen, Maria Alessandra Ragusa</p>
+            </div>
+            <div class="pub-action">
+              <a class="btn-view" href="https://journals.vilniustech.lt/index.php/MMA/article/view/19006" target="_blank" rel="noopener noreferrer">→ View Paper</a>
+            </div>
+          </div>
+
+          <!-- 2024 -->
+          <div class="pub-card" data-year="2024">
+            <div class="pub-body">
+              <a class="pub-title" href="https://link.springer.com/article/10.1007/s13540-024-00246-8" target="_blank" rel="noopener noreferrer">
+                On the concentration-compactness principle for anisotropic variable exponent Sobolev spaces
+              </a>
+              <div class="pub-meta">
+                <span class="pub-journal">Fractional Calculus and Applied Analysis</span>
+                <span class="pub-year-badge">2024</span>
+              </div>
+              <p class="pub-authors">with Maria Alessandra Ragusa, Dušan D. Repovš</p>
+            </div>
+            <div class="pub-action">
+              <a class="btn-view" href="https://link.springer.com/article/10.1007/s13540-024-00246-8" target="_blank" rel="noopener noreferrer">→ View Paper</a>
+            </div>
+          </div>
+
+          <!-- 2024 -->
+          <div class="pub-card" data-year="2024">
+            <div class="pub-body">
+              <a class="pub-title" href="https://onlinelibrary.wiley.com/doi/10.1002/mana.202200503" target="_blank" rel="noopener noreferrer">
+                Generalized noncooperative Schrödinger–Kirchhoff–type systems in ℝᴺ
+              </a>
+              <div class="pub-meta">
+                <span class="pub-journal">Mathematische Nachrichten</span>
+                <span class="pub-year-badge">2024</span>
+              </div>
+              <p class="pub-authors">with Dušan D. Repovš</p>
+            </div>
+            <div class="pub-action">
+              <a class="btn-view" href="https://onlinelibrary.wiley.com/doi/10.1002/mana.202200503" target="_blank" rel="noopener noreferrer">→ View Paper</a>
+            </div>
+          </div>
+
+          <!-- 2023 -->
+          <div class="pub-card" data-year="2023">
+            <div class="pub-body">
+              <a class="pub-title" href="https://link.springer.com/article/10.1007/s00025-023-02005-2" target="_blank" rel="noopener noreferrer">
+                Multiple Solutions for a Class of Generalized Critical Noncooperative Schrödinger Systems
+              </a>
+              <div class="pub-meta">
+                <span class="pub-journal">Results in Mathematics</span>
+                <span class="pub-year-badge">2023</span>
+              </div>
+              <p class="pub-authors">Solo authored</p>
+            </div>
+            <div class="pub-action">
+              <a class="btn-view" href="https://link.springer.com/article/10.1007/s00025-023-02005-2" target="_blank" rel="noopener noreferrer">→ View Paper</a>
+            </div>
+          </div>
+
+          <!-- 2023 -->
+          <div class="pub-card" data-year="2023">
+            <div class="pub-body">
+              <a class="pub-title" href="https://onlinelibrary.wiley.com/doi/full/10.1002/mma.9474" target="_blank" rel="noopener noreferrer">
+                Existence and multiplicity of solutions for a class of critical anisotropic elliptic equations of Schrödinger–Kirchhoff‐type
+              </a>
+              <div class="pub-meta">
+                <span class="pub-journal">Mathematical Methods in the Applied Sciences</span>
+                <span class="pub-year-badge">2023</span>
+              </div>
+              <p class="pub-authors">with Phuong Duc Nguyen, Maria Alessandra Ragusa</p>
+            </div>
+            <div class="pub-action">
+              <a class="btn-view" href="https://onlinelibrary.wiley.com/doi/full/10.1002/mma.9474" target="_blank" rel="noopener noreferrer">→ View Paper</a>
+            </div>
+          </div>
+
+          <!-- 2023 -->
+          <div class="pub-card" data-year="2023">
+            <div class="pub-body">
+              <a class="pub-title" href="https://boundaryvalueproblems.springeropen.com/articles/10.1186/s13661-023-01705-6" target="_blank" rel="noopener noreferrer">
+                The Neumann problem for a class of generalized Kirchhoff-type potential systems
+              </a>
+              <div class="pub-meta">
+                <span class="pub-journal">Boundary Value Problems</span>
+                <span class="pub-year-badge">2023</span>
+              </div>
+              <p class="pub-authors">with Dušan D. Repovš</p>
+            </div>
+            <div class="pub-action">
+              <a class="btn-view" href="https://boundaryvalueproblems.springeropen.com/articles/10.1186/s13661-023-01705-6" target="_blank" rel="noopener noreferrer">→ View Paper</a>
+            </div>
+          </div>
+
+          <!-- 2023 -->
+          <div class="pub-card" data-year="2023">
+            <div class="pub-body">
+              <a class="pub-title" href="https://www.pmf.ni.ac.rs/filomat-content/2023/37-13/37-13-17-18935.pdf" target="_blank" rel="noopener noreferrer">
+                Multiple Solutions for Nonlinear Generalized-Kirchhoff Type Potential Systems in Unbounded Domains
+              </a>
+              <div class="pub-meta">
+                <span class="pub-journal">Filomat</span>
+                <span class="pub-year-badge">2023</span>
+              </div>
+              <p class="pub-authors">with Anass Ouannasser</p>
+            </div>
+            <div class="pub-action">
+              <a class="btn-view" href="https://www.pmf.ni.ac.rs/filomat-content/2023/37-13/37-13-17-18935.pdf" target="_blank" rel="noopener noreferrer">→ View Paper</a>
+            </div>
+          </div>
+
+          <!-- 2022 -->
+          <div class="pub-card" data-year="2022">
+            <div class="pub-body">
+              <a class="pub-title" href="https://www.tandfonline.com/doi/abs/10.1080/00036811.2022.2057305" target="_blank" rel="noopener noreferrer">
+                Generalized critical Kirchhoff-type potential systems with Neumann Boundary conditions
+              </a>
+              <div class="pub-meta">
+                <span class="pub-journal">Applicable Analysis</span>
+                <span class="pub-year-badge">2022</span>
+              </div>
+              <p class="pub-authors">with Maria Alessandra Ragusa</p>
+            </div>
+            <div class="pub-action">
+              <a class="btn-view" href="https://www.tandfonline.com/doi/abs/10.1080/00036811.2022.2057305" target="_blank" rel="noopener noreferrer">→ View Paper</a>
+            </div>
+          </div>
+
+          <!-- 2022 Preprint -->
+          <div class="pub-card" data-year="2022">
+            <div class="pub-body">
+              <span class="pub-title" style="cursor:default;">
+                Existence and Uniqueness Results for the (p(x),q(x))-Laplacian potential-type system
+              </span>
+              <div class="pub-meta">
+                <span class="pub-journal">Preprint</span>
+                <span class="pub-year-badge">2022</span>
+              </div>
+              <p class="pub-authors">with Abderrahmane El Hachimi</p>
+            </div>
+            <div class="pub-action">
+              <span class="btn-view disabled">Preprint</span>
+            </div>
+          </div>
+
+          <!-- 2021 -->
+          <div class="pub-card" data-year="2021">
+            <div class="pub-body">
+              <a class="pub-title" href="https://www.tandfonline.com/doi/abs/10.1080/00036811.2021.1979223" target="_blank" rel="noopener noreferrer">
+                Existence and multiplicity of solutions for Kirchhoff-type potential systems with variable critical growth exponent
+              </a>
+              <div class="pub-meta">
+                <span class="pub-journal">Applicable Analysis</span>
+                <span class="pub-year-badge">2021</span>
+              </div>
+              <p class="pub-authors">Solo authored</p>
+            </div>
+            <div class="pub-action">
+              <a class="btn-view" href="https://www.tandfonline.com/doi/abs/10.1080/00036811.2021.1979223" target="_blank" rel="noopener noreferrer">→ View Paper</a>
+            </div>
+          </div>
+
+          <!-- 2020 -->
+          <div class="pub-card" data-year="2020">
+            <div class="pub-body">
+              <a class="pub-title" href="https://www.hindawi.com/journals/ijde/2020/3438169/" target="_blank" rel="noopener noreferrer">
+                Multiple Solutions for Elliptic (p(x),q(x))-Kirchhoff-Type Potential Systems in Unbounded Domains
+              </a>
+              <div class="pub-meta">
+                <span class="pub-journal">International Journal of Differential Equations</span>
+                <span class="pub-year-badge">2020</span>
+              </div>
+              <p class="pub-authors">with Abderrahmane El Hachimi</p>
+            </div>
+            <div class="pub-action">
+              <a class="btn-view" href="https://www.hindawi.com/journals/ijde/2020/3438169/" target="_blank" rel="noopener noreferrer">→ View Paper</a>
+            </div>
+          </div>
+
+          <!-- 2020 -->
+          <div class="pub-card" data-year="2020">
+            <div class="pub-body">
+              <a class="pub-title" href="https://www.tandfonline.com/doi/abs/10.1080/00036811.2021.1979223" target="_blank" rel="noopener noreferrer">
+                Existence of solutions for a critical (p₁(x),…,pₙ(x))-Kirchhoff-type potential systems
+              </a>
+              <div class="pub-meta">
+                <span class="pub-journal">Applicable Analysis</span>
+                <span class="pub-year-badge">2020</span>
+              </div>
+              <p class="pub-authors">Solo authored</p>
+            </div>
+            <div class="pub-action">
+              <a class="btn-view" href="https://www.tandfonline.com/doi/abs/10.1080/00036811.2021.1979223" target="_blank" rel="noopener noreferrer">→ View Paper</a>
+            </div>
+          </div>
+
+          <!-- 2020 -->
+          <div class="pub-card" data-year="2020">
+            <div class="pub-body">
+              <a class="pub-title" href="https://www.azjm.org/volumes/1001/pdf/1001-1.pdf" target="_blank" rel="noopener noreferrer">
+                Multiple Solutions to a (p₁(x),…,pₙ(x))-Laplacian-type Systems in Unbounded Domain
+              </a>
+              <div class="pub-meta">
+                <span class="pub-journal">Azerbaijan Journal of Mathematics</span>
+                <span class="pub-year-badge">2020</span>
+              </div>
+              <p class="pub-authors">with Ali Alami Idrissi</p>
+            </div>
+            <div class="pub-action">
+              <a class="btn-view" href="https://www.azjm.org/volumes/1001/pdf/1001-1.pdf" target="_blank" rel="noopener noreferrer">→ View Paper</a>
+            </div>
+          </div>
+
+        </div><!-- /pub-list -->
+      </section>
+
+      <div class="section-divider" aria-hidden="true"></div>
+
+      <!-- TEACHING -->
+      <section id="teaching" class="anim-section">
+        <h2 class="section-heading">Teaching Experience</h2>
+        <span class="section-rule" aria-hidden="true"></span>
+        
+        <p class="hero-desc" style="margin-bottom: 32px;">
+          Courses taught at the <strong>Faculty of Sciences Rabat</strong>:
+        </p>
+
+        <div class="timeline">
+          
+          <div class="timeline-item">
+            <div class="timeline-date">2018 — 2021</div>
+            <div class="timeline-title">Training of Excellence (1st &amp; 2nd sem.)</div>
+            <div class="timeline-desc">
+              A regular course aiming to train and prepare students for their Bachelor's degree, and to boost their analytical level for integrating High Engineering Schools (SMA, SMI, SMP, SMC).
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2020 — 2021</div>
+            <div class="timeline-title">Undergraduate Courses</div>
+            <div class="timeline-desc">
+              <ul>
+                <li><strong>1st sem.</strong>: Analysis 3 (SMP S3), Algebra 1 (SMPC S1)</li>
+                <li><strong>2nd sem.</strong>: Analysis 6 (SMA S4), Algebra 2 (SMPC S2)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2019 — 2020</div>
+            <div class="timeline-title">Undergraduate Courses</div>
+            <div class="timeline-desc">
+              <ul>
+                <li><strong>1st sem.</strong>: Analysis 3 (SMP S3), Algebra 2 (SMIA S1), Analysis 1 (SMPC S1)</li>
+                <li><strong>2nd sem.</strong>: Analysis 6 (SMA S4), Analysis 2 (SMPC S2)</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-date">2018 — 2019</div>
+            <div class="timeline-title">Undergraduate Courses</div>
+            <div class="timeline-desc">
+              <ul>
+                <li><strong>1st sem.</strong>: Analysis 1 (SMPC S1)</li>
+                <li><strong>2nd sem.</strong>: Analysis 2 (SMPC S2)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2016 — 2018</div>
+            <div class="timeline-title">Undergraduate Courses</div>
+            <div class="timeline-desc">
+              <ul>
+                <li><strong>1st sem. 2017-2018</strong>: Statistics (SVI S3)</li>
+                <li><strong>1st sem. 2016-2017</strong>: Statistics (SVI S3)</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <div class="section-divider" aria-hidden="true"></div>
+
+      <!-- REFEREEING -->
+      <section id="refereeing" class="anim-section">
+        <h2 class="section-heading">Refereeing Journals</h2>
+        <span class="section-rule" aria-hidden="true"></span>
+
+        <div class="journal-tags" role="list">
+          <span class="journal-tag" role="listitem">Journal of Differential Equations</span>
+          <span class="journal-tag" role="listitem">Mediterranean Journal of Mathematics</span>
+          <span class="journal-tag" role="listitem">Communications in Nonlinear Science and Numerical Simulation</span>
+          <span class="journal-tag" role="listitem">Qualitative Theory of Dynamical Systems</span>
+          <span class="journal-tag" role="listitem">Mathematische Nachrichten</span>
+          <span class="journal-tag" role="listitem">Journal of Nonlinear and Variational Analysis</span>
+          <span class="journal-tag" role="listitem">Bulletin of the Malaysian Mathematical Sciences Society</span>
+          <span class="journal-tag" role="listitem">Journal of Mathematics and Computer Science</span>
+          <span class="journal-tag" role="listitem">Journal of Function Spaces</span>
+          <span class="journal-tag" role="listitem">Mathematical Reviews (AMS)</span>
+        </div>
+      </section>
+
+    </div><!-- /container -->
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="container">
+      <p class="footer-copy">© 2026 Nabil Chemseddine &nbsp;·&nbsp; Built with care</p>
+      <div class="footer-links">
+        <a href="https://scholar.google.com/citations?user=wW8nHf4AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        <a href="https://www.researchgate.net/profile/Nabil-Chems-Eddine" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+        <a href="https://www.scopus.com/authid/detail.uri?authorId=57215579525" target="_blank" rel="noopener noreferrer">Scopus</a>
+        <a href="https://orcid.org/0000-0001-8503-1305" target="_blank" rel="noopener noreferrer">ORCID</a>
+        <a href="mailto:nab.chemseddine@gmail.com">nab.chemseddine@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== BACK TO TOP ========== -->
+  <button id="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    /* Back to Top */
+    const btn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    /* Publication Filter */
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const pubCards   = document.querySelectorAll('.pub-card');
+    const pubList    = document.getElementById('pub-list');
+
+    filterBtns.forEach(button => {
+      button.addEventListener('click', () => {
+        const year = button.dataset.year;
+
+        /* Update active state */
+        filterBtns.forEach(b => b.classList.remove('active'));
+        button.classList.add('active');
+
+        /* Filter cards */
+        pubCards.forEach(card => {
+          const cardYear = card.dataset.year;
+          const show = (year === 'all') || (cardYear === year);
+
+          if (show) {
+            card.classList.remove('hidden');
+            card.style.position = '';
+            card.style.visibility = '';
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    /* Intersection Observer for scroll-triggered animations on cards */
+    const observerOptions = {
+      threshold: 0.08,
+      rootMargin: '0px 0px -40px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    /* Animate pub cards individually on scroll */
+    pubCards.forEach((card, i) => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease, box-shadow 0.25s ease';
+      card.style.transitionDelay = `${i * 0.04}s`;
+      observer.observe(card);
+    });
+
+    /* Animate interest cards */
+    document.querySelectorAll('.interest-card').forEach((card, i) => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(16px)';
+      card.style.transition = `opacity 0.5s ease ${i * 0.1}s, transform 0.5s ease ${i * 0.1}s, box-shadow 0.25s, background 0.25s`;
+      observer.observe(card);
+    });
+
+    /* Animate journal tags */
+    document.querySelectorAll('.journal-tag').forEach((tag, i) => {
+      tag.style.opacity = '0';
+      tag.style.transform = 'translateY(10px)';
+      tag.style.transition = `opacity 0.4s ease ${i * 0.05}s, transform 0.4s ease ${i * 0.05}s, background 0.22s, color 0.22s, box-shadow 0.22s`;
+      observer.observe(tag);
+    });
+
+    /* Animate timeline items */
+    document.querySelectorAll('.timeline-item').forEach((item, i) => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(20px)';
+      item.style.transition = `opacity 0.5s ease ${i * 0.1}s, transform 0.5s ease ${i * 0.1}s, box-shadow 0.25s ease`;
+      observer.observe(item);
+    });
+
+    /* Sticky Nav & Scroll Spy */
+    const stickyNav = document.getElementById('sticky-nav');
+    const sections = document.querySelectorAll('header, section');
+    const navLinks = document.querySelectorAll('.hero-nav a, .sticky-nav-links a');
+
+    window.addEventListener('scroll', () => {
+      /* Sticky Nav Visibility */
+      if (window.scrollY > 400) {
+        stickyNav.classList.add('visible');
+      } else {
+        stickyNav.classList.remove('visible');
+      }
+
+      /* Scroll Spy */
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= sectionTop - 150) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('href') === `#${current}`) {
+          a.classList.add('active');
+        }
+      });
+    });
+
+    /* Counter Animation using Intersection Observer */
+    const counters = document.querySelectorAll('.counter');
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+          const target = +counter.getAttribute('data-target');
+          const duration = 1500; // ms
+          const increment = target / (duration / 16); 
+          let current = 0;
+
+          const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+              counter.innerText = Math.ceil(current);
+              requestAnimationFrame(updateCounter);
+            } else {
+              counter.innerText = target;
+            }
+          };
+          updateCounter();
+          observer.unobserve(counter);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => counterObserver.observe(counter));
+  </script>
+
+</body>
+</html>
